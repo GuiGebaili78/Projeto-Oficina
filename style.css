@@ -63,5 +63,8 @@ body {
     color: var(--cor-quaternaria);
 }
 
+.th {
+  background-color: var(--cor-terciaria);
+}
 
 
