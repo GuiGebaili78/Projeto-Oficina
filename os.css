@@ -43,4 +43,18 @@ body {
     border: none;
  }
 
+ /* Estilo para remover margin e padding dos campos da tabela */
+.table input[type="number"],
+.table input[type="text"] {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Estilo opcional para ajustar margens e paddings dos campos de entrada */
+.form-control {
+    margin-bottom: 0.5rem;
+    padding: 0.375rem 0.75rem;
+}
+
  
