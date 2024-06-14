@@ -1,76 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ordem de Serviço</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="os.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordem de Serviço</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="os.css">
 </head>
 <body>
 
-    <object data="nav.html" class="nav"></object>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid navbar">
+      <a class="navbar-brand" href="index.html">Oficina</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link font-nav" aria-current="page" href="cadastroClientes.html">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-nav" href="os.html">OS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-nav" href="oficina.html">Oficina</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-nav" href="pecas.html">Peças</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link font-nav dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="contasPagar.html">Contas à pagar</a></li>
+              <li><a class="dropdown-item" href="relatorios.html">Relatórios</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Colaboradores</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Ordem de Serviço</h1>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Ordem de Serviço</h1>
 
-        <div class="mb-3 row">
-            <label for="nomeCliente" class="col-sm-2 col-form-label">Nome do Cliente</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required>
-            </div>
-            <label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
-            <div class="col-sm-4">
-                <input type="tel" class="form-control" id="telefone" name="telefone" required>
-            </div>
-        </div>
-
-        <div class="mb-3 row">
-            <label for="dataOS" class="col-sm-2 col-form-label">Data da OS</label>
-            <div class="col-sm-4">
-                <input type="date" class="form-control" id="dataOS" name="dataOS" required>
-            </div>
-            <label for="placaCarro" class="col-sm-2 col-form-label">Placa do Carro</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" id="placaCarro" name="placaCarro" required>
-            </div>
-        </div>
-
-        <table class="table table-bordered table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th class="text-center">Quantidade</th>
-                    <th class="text-center">Descrição do Produto</th>
-                    <th class="text-center">Preço Unitário (R$)</th>
-                    <th class="text-center">Preço Final (R$)</th>
-                    <th class="text-center"></th>
-                </tr>
-            </thead>
-            <tbody id="tbody-os">
-                <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
-                <tr>
-                    <td><input type="number" class="form-control form-control-sm" name="quantidade[]" required></td>
-                    <td><input type="text" class="form-control form-control-sm" name="descricao[]" required></td>
-                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_unitario[]" required></td>
-                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_final[]" readonly></td>
-                    <td class="text-center"><button type="button" class="btn btn-danger btn-remove-row">Remover</button></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="text-center">
-            <button type="button" class="btn btn-danger btn-add-row">Adicionar Mais Linhas</button>
-        </div>
-
-        <div class="text-center mt-4">
-            <button type="submit" class="btn btn-danger">Salvar Ordem de Serviço</button>
-        </div>
+    <div class="mb-3 row">
+      <label for="numOS" class="col-sm-2 col-form-label">Número da OS</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="numOS" name="numOS" required />
+      </div>
+      <label for="formaPagamento" class="col-sm-2 col-form-label">Forma de Pagamento</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="formaPagamento" name="formaPagamento" required />
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <div class="mb-3 row">
+      <label for="nomeCliente" class="col-sm-2 col-form-label">Nome do Cliente</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required />
+      </div>
+      <label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
+      <div class="col-sm-4">
+        <input type="tel" class="form-control" id="telefone" name="telefone" required />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="dataOS" class="col-sm-2 col-form-label">Data da OS</label>
+      <div class="col-sm-4">
+        <input type="date" class="form-control" id="dataOS" name="dataOS" required />
+      </div>
+      <label for="placaCarro" class="col-sm-2 col-form-label">Placa do Carro</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="placaCarro" name="placaCarro" required />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="quilometragem" class="col-sm-2 col-form-label">Quilometragem do Carro</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="quilometragem" name="quilometragem" />
+      </div>
+      <label for="valorMaoObra" class="col-sm-2 col-form-label">Valor da Mão de Obra (R$)</label>
+      <div class="col-sm-4">
+        <input type="number" step="0.01" class="form-control" id="valorMaoObra" name="valorMaoObra" required />
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-danger btn-add-row">Adicionar Mais Linhas</button>
+      <button type="button" class="btn btn-secondary btn-toggle-columns">Mostrar/Ocultar Colunas Extras</button>
+    </div>
+
+    <table class="table table-bordered table-hover">
+      <thead class="cabecalho-tabela">
+        <tr>
+          <th class="text-center">Quantidade</th>
+          <th class="text-center">Descrição do Produto</th>
+          <th class="text-center">Preço Unitário (R$)</th>
+          <th class="text-center">Preço Final (R$)</th>
+          <th class="text-center coluna-extra d-none">Auto Peças</th>
+          <th class="text-center coluna-extra d-none">Valor</th>
+          <th class="text-center coluna-extra d-none">obs</th>
+          <th class="text-center coluna-extra d-none">obs</th>
+          <th class="text-center"></th>
+        </tr>
+      </thead>
+      <tbody id="tbody-os">
+        <tr>
+          <td><input type="number" class="form-control form-control-sm" name="quantidade[]" required /></td>
+          <td><input type="text" class="form-control form-control-sm" name="descricao[]" required /></td>
+          <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_unitario[]" required /></td>
+          <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_final[]" readonly /></td>
+          <td class="coluna-extra d-none"><input type="text" class="form-control form-control-sm" name="auto-pecas[]" /></td>
+          <td class="coluna-extra d-none"><input type="text" class="form-control form-control-sm" name="valor[]" /></td>
+          <td class="coluna-extra d-none"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
+          <td class="coluna-extra d-none"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
+          <td class="text-center"><button type="button" class="btn btn-danger btn-remove-row">Remover</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="table-success">
+          <td colspan="4" class="text-right">Valor Parcial (R$):</td>
+          <td id="valor-parcial">0.00</td></tr>
+        <tr class="table-success">
+          <td colspan="4" class="text-right">Mão de Obra (R$):</td>
+          <td id="mao-de-obra">0.00</td></tr>
+        <tr class="table-success">
+          <td colspan="4" class="text-right">Valor Total (R$):</td>
+          <td id="valor-total">0.00</td></tr>
+      </tfoot>
+    </table>
+    
+
+      <div class="mb-3 row">
+        <label for="observacao" class="col-sm-2 col-form-label">Observações</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="observacao" name="observacao" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="obs-oficina">
+      <div class="mb-3 row">
+        <label for="nomeProfissional" class="col-sm-2 col-form-label profissional">Profissional</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nomeProfissional" name="nomeProfissional" required />
+        </div>
+        <label for="dataEntrega" class="col-sm-2 col-form-label">Data de Entrega</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="dataEntrega" name="dataEntrega" required />
+        </div>
+        <div class="mb-3 row">
+            <label for="formaPagamento" class="col-sm-2 col-form-label">Forma de Pagamento</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="formaPagamento" name="formaPagamento" required />
+            </div>
+            <div class="mb-3 row">
+                <label for="nomeOficina" class="col-sm-2 col-form-label">Oficina</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" id="nomeOficina" name="nomeOficina" required />
+                </div>
+              </div>
+              
+          </div>
+          
+      </div>
+    </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-danger">Salvar Ordem de Serviço</button>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-left">© 2024 Oficina - Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    
+
+    <script src="script.js" type="module"></script>
     <script src="os.js" type="module"></script>
-</body>
+  </body>
 </html>

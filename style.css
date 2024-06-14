@@ -1,70 +1,153 @@
 :root {
-    --cor-primaria: #27374D;
-    --cor-secundaria: #526D82;
-    --cor-terciaria: #9DB2BF;
-    --cor-quaternaria: #DDE6ED;
+  --cor-primaria: #27374D;
+  --cor-secundaria: #526D82;
+  --cor-terciaria: #9DB2BF;
+  --cor-quaternaria: #DDE6ED;
 }
+
+
+/*  CSS APP  */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 
 body {
-    background-color: var(--cor-terciaria);
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    height: 100%;
-    
+  background-color: var(--cor-terciaria);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
-.main {
-    width: 40%;
-    margin-left: 40px;
-    margin-top: 40px;
-}
-.nav{
-    width: 100%;
-}
-.h1{
-    margin-left: 40px;
-}
-.navbar{
-    background-color: var(--cor-secundaria);
-    
-  }
-  .navbar-brand, .font-nav{
-    color: rgb(178, 173, 173);
-    margin-left: 40px;          
-  }
-  
-  .navbar-toggler-icon {
-    color: var(--cor-quaternaria);
-  }
 
-  .d-flex{
+h1 {
+  margin-left: 40px;
+  padding-left: 10px;
+}
+
+nav, .main, footer {
+  flex: 0 0 auto;
+}
+
+
+.container {
+  flex: 1;
+}
+
+
+.navbar {
+  background-color: var(--cor-secundaria);
+}
+
+.navbar-brand, .font-nav {
+  color: rgb(178, 173, 173);
+  margin-left: 40px;
+}
+
+.navbar-toggler-icon {
+  color: var(--cor-quaternaria);
+}
+
+.d-flex {  /*navbar*/
     margin-right: 30px;
-  }
+}
 
-  .btn-danger {
-    margin: 15px;
-    margin-bottom: 140px;
-    background-color: var(--cor-primaria);
-    border: none;
+.btn-danger {
+  margin: 15px;
+  margin-bottom: 140px;
+  background-color: var(--cor-primaria);
+  border: none;
+}
 
-  }
-
-  .btn-custom {
-    background-color: var(--cor-primaria);
-    color: var(--cor-quaternaria);
-    border: none;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 15px 0;
-    text-align: center;
+.btn-custom {
+  background-color: var(--cor-primaria);
+  color: var(--cor-quaternaria);
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  text-align: center;
 }
 
 .btn-custom:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-quaternaria);
-}
-
-.th {
-  background-color: var(--cor-terciaria);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-quaternaria);
 }
 
 
+.btn:hover {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-quaternaria);
+}
+
+.btn-add-row {
+  margin: 20px;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+/*  CSS OS  */
+
+
+
+table {
+  width: 100%;
+  table-layout: fixed; /* Define a largura fixa para as colunas */
+  border-collapse: collapse; /* Garante que as bordas não tenham espaços entre si */
+}
+
+th.text-center,
+td input {
+  text-align: center;
+}
+
+th.text-center {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-quaternaria);
+  padding: 10px; /* Adiciona um pouco de espaço ao redor do texto */
+  vertical-align: middle; /* Alinha verticalmente o texto ao centro */
+  border: 1px solid #ddd; /* Define bordas para uma melhor visualização */
+}
+
+td input {
+  width: 100%; /* Garante que os inputs preencham a célula completamente */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+  text-align: center; /* Centraliza o texto dos inputs */
+}
+
+th.text-center:nth-child(1) {
+  width: 7%; /* Quantidade */
+}
+
+th.text-center:nth-child(2) {
+  width: 20%; /* Descrição do Produto */
+}
+
+th.text-center:nth-child(3) {
+  width: 7%; /* Preço Unitário */
+}
+
+th.text-center:nth-child(4) {
+  width: 7%; /* Preço Final */
+}
+
+th.text-center:nth-child(5),
+th.text-center:nth-child(6),
+th.text-center:nth-child(7),
+th.text-center:nth-child(8) {
+  width: 10%; /* Colunas extras */
+}
+
+th.text-center:nth-child(9) {
+  width: 10%; /* Ações */
+}

@@ -1,0 +1,48 @@
+:root {
+    --cor-primaria: #27374D;
+    --cor-secundaria: #526D82;
+    --cor-terciaria: #9DB2BF;
+    --cor-quaternaria: #DDE6ED;
+}
+
+
+
+h1.h1 {
+    margin: 50px 0px 0px 60px;
+   
+}
+
+.form-group {
+    width: 600px;   
+}
+
+#btn_enviar {
+    margin-left: 0px;
+}
+
+nav, .main, footer {
+    flex: 0 0 auto; /* Garante que esses elementos não cresçam ou encolham */
+}
+
+.main {
+    flex: 1 0 auto; /* Permite que o conteúdo principal expanda para ocupar o espaço disponível */
+    padding: 20px; /* Adiciona um pouco de espaço ao redor do conteúdo principal */
+    margin: 40px;
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    flex-shrink: 0; /* Garante que o footer não encolha */
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-danger {
+    margin-top: 20px;
+}
