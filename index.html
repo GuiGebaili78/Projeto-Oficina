@@ -1,95 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordem de Serviço</title>    
+    <link rel="stylesheet" href="./styles/style.css" />
 </head>
-<body class="d-flex flex-column min-vh-100">
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid navbar">
-            <a class="navbar-brand" href="index.html">Oficina</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link font-nav" aria-current="page" href="cadastroClientes.html">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link font-nav" href="os.html">OS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link font-nav" href="oficina.html">Oficina</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link font-nav" href="pecas.html">Peças</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link font-nav dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dashboard
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="contasPagar.html">Contas à pagar</a></li>
-                            <li><a class="dropdown-item" href="relatorios.html">Relatórios</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Colaboradores</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container my-5 flex-grow-1">
-        <div class="row text-center">
-            <div class="col-md-2">
-                <a href="./os.html" class="btn btn-custom">OS</a>
-            </div>
-            <div class="col-md-2">
-                <a href="cadastroClientes.html" class="btn btn-custom">Clientes</a>
-            </div>
-            <div class="col-md-2">
-                <a href="pagina3.html" class="btn btn-custom">Peças</a>
-            </div>
-            <div class="col-md-2">
-                <a href="pagina4.html" class="btn btn-custom">Financeiro</a>
-            </div>
-            <div class="col-md-2">
-                <a href="pagina5.html" class="btn btn-custom">Dashboard</a>
-            </div>
-            <div class="col-md-2">
-                <a href="pagina6.html" class="btn btn-custom">Página 6</a>
-            </div>
-        </div>
-    </div>
-
+<body>
+    <div id="nav-placeholder"></div>
     
+    <main class="main">
+        <div class="container">
+            <h1 class="text-center">Ordem de Serviço</h1>
 
-    <footer class="bg-dark text-light pt-5 pb-4">
-        <div class="col-md-7 col-lg-8">
-            <p class="text-center text-md-left">© 2024 Oficina - Todos os direitos reservados.</p>
+            <section class="cabecalho-os">
+                <div class="cabecalho">
+                    <div>
+                        <input type="date" class="form-control" id="dataOS" name="dataOS" required />
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" id="numOS" name="numOS" required placeholder="Número da OS" />
+                    </div>
+                    <div>            
+                        <input type="text" class="form-control" id="veiculoOS" name="veiculoOS" required placeholder="Veículo" />            
+                    </div>          
+                    <div>
+                        <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required placeholder="Cliente" />
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" id="quilometragem" name="quilometragem" placeholder="KM" />
+                    </div>
+                </div>
+            </section>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="script.js" type="module"></script>
+        <div class="text-center">
+            <button type="button" class="btn-add-row">Adicionar Mais Linhas</button>
+            <button type="button" class="btn-toggle-columns">Extras</button>
+        </div>
+
+        <table class="table">
+            <thead class="cabecalho-tabela">
+                <tr>
+                    <th class="text-center">Quantidade</th>
+                    <th class="text-center">Descrição do Produto</th>
+                    <th class="text-center">Preço Unitário (R$)</th>
+                    <th class="text-center">Preço Final (R$)</th>
+                    <th class="text-center coluna-extra extras-hidden">Auto Peças</th>
+                    <th class="text-center coluna-extra extras-hidden">Valor</th>
+                    <th class="text-center coluna-extra extras-hidden">Obs</th>
+                    <th class="text-center coluna-extra extras-hidden">Obs</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody id="tbody-os">
+                <tr>
+                    <td><input type="number" class="form-control form-control-sm" name="quantidade[]" required /></td>
+                    <td><input type="text" class="form-control form-control-sm" name="descricao[]" required /></td>
+                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_unitario[]" required /></td>
+                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_final[]" readonly /></td>
+                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="auto-pecas[]" /></td>
+                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="valor[]" /></td>
+                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
+                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
+                    <td class="text-center"><button type="button" class="btn-remove-row">Remover</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="table-success">
+                    <td colspan="3"></td>
+                    <td class="text-right">Valor Parcial (R$):</td>
+                    <td id="valor-parcial">0.00</td>
+                </tr>
+                <tr class="table-success">
+                    <td colspan="3"></td>
+                    <td class="text-right">Mão de Obra (R$):</td>
+                    <td id="mao-de-obra">0.00</td>
+                </tr>
+                <tr class="table-success">
+                    <td colspan="3"></td>
+                    <td class="text-right">Valor Total (R$):</td>
+                    <td id="valor-total">0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="observacoes">
+            <textarea class="form-control" id="observacao" name="observacao" rows="3" placeholder="Observações"></textarea>
+        </div>
+
+        <section class="input-final">
+            <div>
+                <input type="text" class="form-control" id="nomeProfissional" name="nomeProfissional" required placeholder="Profissional" />
+            </div>
+            <div>
+                <input type="text" class="form-control" id="formaPagamento" name="formaPagamento" required placeholder="Forma de Pagamento" />
+            </div>
+            <div>
+                <input type="text" class="form-control" id="nomeOficina" name="nomeOficina" required placeholder="Oficina" />
+            </div>     
+        </section>
+        
+        <div class="entrega">
+            <label for="dataEntrega">Data da Entrega</label>
+            <input type="date" class="form-control" id="dataEntrega" name="dataEntrega"  required/>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn-submit">Salvar Ordem de Serviço</button>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="./scripts/components.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
