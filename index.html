@@ -1,119 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ordem de Serviço</title>    
+    <title>Ordem de Serviço</title>
     <link rel="stylesheet" href="./styles/style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="nav-placeholder"></div>
-    
+
     <main class="main">
-        <div class="container">
-            <h1 class="text-center">Ordem de Serviço</h1>
+      <div class="container">
+        <h1 class="text-center">Ordem de Serviço</h1>
 
-            <section class="cabecalho-os">
-                <div class="cabecalho">
-                    <div>
-                        <input type="date" class="form-control" id="dataOS" name="dataOS" required />
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" id="numOS" name="numOS" required placeholder="Número da OS" />
-                    </div>
-                    <div>            
-                        <input type="text" class="form-control" id="veiculoOS" name="veiculoOS" required placeholder="Veículo" />            
-                    </div>          
-                    <div>
-                        <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required placeholder="Cliente" />
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" id="quilometragem" name="quilometragem" placeholder="KM" />
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="text-center">
-            <button type="button" class="btn-add-row">Adicionar Mais Linhas</button>
-            <button type="button" class="btn-toggle-columns">Extras</button>
-        </div>
-
-        <table class="table">
-            <thead class="cabecalho-tabela">
-                <tr>
-                    <th class="text-center">Quantidade</th>
-                    <th class="text-center">Descrição do Produto</th>
-                    <th class="text-center">Preço Unitário (R$)</th>
-                    <th class="text-center">Preço Final (R$)</th>
-                    <th class="text-center coluna-extra extras-hidden">Auto Peças</th>
-                    <th class="text-center coluna-extra extras-hidden">Valor</th>
-                    <th class="text-center coluna-extra extras-hidden">Obs</th>
-                    <th class="text-center coluna-extra extras-hidden">Obs</th>
-                    <th class="text-center"></th>
-                </tr>
-            </thead>
-            <tbody id="tbody-os">
-                <tr>
-                    <td><input type="number" class="form-control form-control-sm" name="quantidade[]" required /></td>
-                    <td><input type="text" class="form-control form-control-sm" name="descricao[]" required /></td>
-                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_unitario[]" required /></td>
-                    <td><input type="number" step="0.01" class="form-control form-control-sm" name="preco_final[]" readonly /></td>
-                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="auto-pecas[]" /></td>
-                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="valor[]" /></td>
-                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
-                    <td class="coluna-extra extras-hidden"><input type="text" class="form-control form-control-sm" name="obs[]" /></td>
-                    <td class="text-center"><button type="button" class="btn-remove-row">Remover</button></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr class="table-success">
-                    <td colspan="3"></td>
-                    <td class="text-right">Valor Parcial (R$):</td>
-                    <td id="valor-parcial">0.00</td>
-                </tr>
-                <tr class="table-success">
-                    <td colspan="3"></td>
-                    <td class="text-right">Mão de Obra (R$):</td>
-                    <td id="mao-de-obra">0.00</td>
-                </tr>
-                <tr class="table-success">
-                    <td colspan="3"></td>
-                    <td class="text-right">Valor Total (R$):</td>
-                    <td id="valor-total">0.00</td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <div class="observacoes">
-            <textarea class="form-control" id="observacao" name="observacao" rows="3" placeholder="Observações"></textarea>
-        </div>
-
-        <section class="input-final">
-            <div>
-                <input type="text" class="form-control" id="nomeProfissional" name="nomeProfissional" required placeholder="Profissional" />
-            </div>
-            <div>
-                <input type="text" class="form-control" id="formaPagamento" name="formaPagamento" required placeholder="Forma de Pagamento" />
-            </div>
-            <div>
-                <input type="text" class="form-control" id="nomeOficina" name="nomeOficina" required placeholder="Oficina" />
-            </div>     
+        <section class="cabecalho-os">
+          <div>
+            <input
+              type="date"
+              class="form-control"
+              id="dataOS"
+              name="dataOS"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="numOS"
+              name="numOS"
+              required
+              placeholder="Número da OS"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="veiculoOS"
+              name="veiculoOS"
+              required
+              placeholder="Veículo"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="nomeCliente"
+              name="nomeCliente"
+              required
+              placeholder="Cliente"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="quilometragem"
+              name="quilometragem"
+              placeholder="KM"
+            />
+          </div>
         </section>
-        
-        <div class="entrega">
-            <label for="dataEntrega">Data da Entrega</label>
-            <input type="date" class="form-control" id="dataEntrega" name="dataEntrega"  required/>
-        </div>
+      </div>
 
-        <div class="text-center mt-4">
-            <button type="submit" class="btn-submit">Salvar Ordem de Serviço</button>
-        </div>
+      <div class="btn__adicionar">
+        <button type="button" class="btn-add-row">Adicionar Mais Linhas</button>
+        <button type="button" class="btn-toggle-columns">Extras</button>
+      </div>
+
+      <table class="table">
+        <thead class="cabecalho-tabela">
+          <tr>
+            <th class="text-center">Quantidade</th>
+            <th class="text-center">Descrição do Produto</th>
+            <th class="text-center">Preço Unitário (R$)</th>
+            <th class="text-center">Preço Final (R$)</th>
+            <th class="text-center coluna-extra extras-hidden">Auto Peças</th>
+            <th class="text-center coluna-extra extras-hidden">Valor</th>
+            <th class="text-center coluna-extra extras-hidden">Obs</th>
+            <th class="text-center coluna-extra extras-hidden">Obs</th>
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody id="tbody-os">
+          <tr>
+            <td>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                name="quantidade[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="descricao[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control form-control-sm"
+                name="preco_unitario[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control form-control-sm"
+                name="preco_final[]"
+                readonly
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="auto-pecas[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="valor[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="obs[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="obs[]"
+              />
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn-remove-row">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Valor Parcial (R$):</td>
+            <td id="valor-parcial">0.00</td>
+          </tr>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Mão de Obra (R$):</td>
+            <td id="mao-de-obra">0.00</td>
+          </tr>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Valor Total (R$):</td>
+            <td id="valor-total">0.00</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="observacoes">
+        <textarea
+          class="form-control"
+          id="observacao"
+          name="observacao"
+          rows="3"
+          placeholder="Observações"
+        ></textarea>
+      </div>
+
+      <section class="input-final">
+        
+          <input
+            type="text"
+            class="form-control"
+            id="nomeProfissional"
+            name="nomeProfissional"
+            required
+            placeholder="Profissional"
+          />        
+        
+          <input
+            type="text"
+            class="form-control"
+            id="formaPagamento"
+            name="formaPagamento"
+            required
+            placeholder="Forma de Pagamento"
+          />
+
+          <input
+            type="text"
+            class="form-control"
+            id="nomeOficina"
+            name="nomeOficina"
+            required
+            placeholder="Oficina"
+          />
+
+          <input
+          type="date"
+          class="form-control"
+          id="dataEntrega"
+          name="dataEntrega"
+          required
+        />
+        
+      </section>
+
+     
+
+      <div class="btn__salvar">
+        <button type="submit" class="btn-submit">
+          Salvar Ordem de Serviço
+        </button>
+      </div>
     </main>
 
     <div id="footer-placeholder"></div>
 
     <script src="./scripts/components.js"></script>
     <script src="./scripts/script.js"></script>
-</body>
+  </body>
 </html>

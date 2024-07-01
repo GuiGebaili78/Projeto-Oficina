@@ -28,7 +28,7 @@ body {
 }
 
 main {
-  padding: 30px;
+  padding: 30px 80px;
 }
 
 /* Navbar */
@@ -87,26 +87,23 @@ main {
   align-items: center;
 }
 
-.cabecalho {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
 
-.cabecalho-os input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.cabecalho-os {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px;
+}  
+
+.btn__adicionar {
+  text-align: center;
 }
 
 .text-center {
   text-align: center;
 }
 
-.mt-4 {
-  margin-top: 1.5rem;
-}
 
 .form-control {
   width: 100%;
@@ -169,26 +166,34 @@ tfoot td {
 }
 
 .observacoes {
-  width: 80%;
-  border-collapse: collapse;
-  margin: 20px auto;
+  display: block;
+  margin: 0 200px;
+  text-align: center;
 }
 
 .input-final {
-  width: 80%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 20px auto;
+  width: 100%;
+  margin: 15px;
+}
+
+.input-final input{
+  width: 15em;
 }
 
 .entrega {
-  width: 20%;
+  width: 15em;
   padding: 10px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.btn__salvar {
+  text-align: center;
 }
 
 /* Estilo para tablets */
@@ -198,27 +203,20 @@ tfoot td {
       align-items: center;
   }
 
-  .cabecalho {
+  .cabecalho-os {
       display: flex;
       flex-direction: column;
   }
 
   .input-final {
-      display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 /* Estilo para dispositivos móveis */
 @media (max-width: 576px) {
-  .table thead {
-      display: none;
-  }
-
-  .table, .table tbody, .table tr, .table td {
-      display: block;
-      width: 100%;
-  }
+  
 
   .table tr {
       margin-bottom: 15px;
@@ -226,7 +224,6 @@ tfoot td {
 
   .table td {
       text-align: right;
-      padding-left: 50%;
       position: relative;
   }
 
