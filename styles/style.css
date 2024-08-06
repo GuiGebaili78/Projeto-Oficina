@@ -253,16 +253,22 @@ tfoot td {
   text-align: left;
 }
 
+/* Alinhamento e estilo para .input-final */
 .input-final {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  margin: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.input-final input{
-  width: 15em;
+.input-final input {
+  width: calc(25% - 10px); /* Ajuste para garantir espaçamento */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 40px;
 }
 
 .entrega {
