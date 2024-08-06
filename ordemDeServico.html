@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/ordemDeServico.css" />
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+
+    <main class="main">
+      <div class="titulo">
+        <h1 class="text-center">Ordem de Serviço</h1>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="numOS"
+            name="numOS"
+            required
+            placeholder="Número da OS"
+          />
+        </div>
+      </div>
+
+      <div class="container">
+        <section class="cabecalho-os">
+          <div>
+            <input
+              type="date"
+              class="form-control"
+              id="dataOS"
+              name="dataOS"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="placaOS"
+              name="placaOS"
+              required
+              placeholder="Placa"
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="veiculoOS"
+              name="veiculoOS"
+              required
+              placeholder="Veículo"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="corOS"
+              name="corOS"
+              required
+              placeholder="Cor"
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="quilometragemOS"
+              name="quilometragemOS"
+              placeholder="KM"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="cliente-contatoOS">
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="nomeClienteOS"
+            name="nomeClienteOS"
+            required
+            placeholder="Cliente"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="contatoOS"
+            name="contatoOS"
+            required
+            placeholder="Contato"
+          />
+        </div>
+      </div>
+
+      <div class="btn__adicionar">
+        <button type="button" class="btn-add-row">Adicionar Mais Linhas</button>
+        <button type="button" class="btn-toggle-columns">Extras</button>
+      </div>
+
+      <table class="table">
+        <thead class="cabecalho-tabela">
+          <tr>
+            <th class="text-center col-quantidade">Quantidade</th>
+            <th class="text-center col-descricao">Descrição do Produto</th>
+            <th class="text-center col-preco-unitario">Preço Unitário (R$)</th>
+            <th class="text-center col-preco-final">Preço Final (R$)</th>
+            <th class="text-center coluna-extra extras-hidden">Auto Peças</th>
+            <th class="text-center coluna-extra extras-hidden">Valor</th>
+            <th class="text-center coluna-extra extras-hidden">Obs</th>
+            <th class="text-center coluna-extra extras-hidden">Obs</th>
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody id="tbody-os">
+          <tr>
+            <td>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                name="quantidade[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="descricao[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control form-control-sm"
+                name="preco_unitario[]"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control form-control-sm"
+                name="preco_final[]"
+                readonly
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="auto-pecas[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="valor[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="obs[]"
+              />
+            </td>
+            <td class="coluna-extra extras-hidden">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="obs[]"
+              />
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn-remove-row">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Valor Parcial (R$):</td>
+            <td id="valor-parcial">0.00</td>
+          </tr>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Mão de Obra (R$):</td>
+            <td id="mao-de-obra">0.00</td>
+          </tr>
+          <tr class="table-success">
+            <td colspan="3"></td>
+            <td class="text-right">Valor Total (R$):</td>
+            <td id="valor-total">0.00</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="observacoes">
+        <textarea
+          class="form-control"
+          id="observacao"
+          name="observacao"
+          rows="3"
+          placeholder="Observações:"
+        ></textarea>
+      </div>
+
+      <section class="input-final">
+        <input
+          type="text"
+          class="form-control"
+          id="nomeProfissional"
+          name="nomeProfissional"
+          required
+          placeholder="Profissional:"
+        />
+
+        <input
+          type="text"
+          class="form-control"
+          id="formaPagamento"
+          name="formaPagamento"
+          required
+          placeholder="Forma de Pagamento:"
+        />
+
+        <input
+          type="text"
+          class="form-control"
+          id="nomeOficina"
+          name="nomeOficina"
+          required
+          placeholder="Oficina:"
+        />
+
+        <input
+          type="date"
+          class="form-control"
+          id="dataEntrega"
+          name="dataEntrega"
+          required
+        />
+      </section>
+
+      <div class="btn__salvar">
+        <button type="submit" class="btn-submit">
+          Salvar Ordem de Serviço
+        </button>
+      </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="./scripts/nav_footer.js"></script>
+    <script src="./scripts/ordemDeServico.js"></script>
+  </body>
+</html>

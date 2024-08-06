@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const tbodyOS = document.getElementById('tbody-os');
-    const btnAddRow = document.querySelector('.btn-add-row');
-    const btnToggleColumns = document.querySelector('.btn-toggle-columns');
+document.addEventListener("DOMContentLoaded", function () {
+  const tbodyOS = document.getElementById("tbody-os");
+  const btnAddRow = document.querySelector(".btn-add-row");
+  const btnToggleColumns = document.querySelector(".btn-toggle-columns");
 
-    // Adicionar nova linha
-    btnAddRow.addEventListener('click', function() {
-        const newRowHtml = `
+  // Adicionar nova linha a tabela da OS
+  btnAddRow.addEventListener("click", function () {
+    const newRowHtml = `
             <tr>
                 <td><input type="number" class="form-control form-control-sm" name="quantidade[]" required /></td>
                 <td><input type="text" class="form-control form-control-sm" name="descricao[]" required /></td>
@@ -19,28 +19,26 @@ document.addEventListener('DOMContentLoaded', function() {
             </tr>
         `;
 
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = newRowHtml;
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = newRowHtml;
 
-        // Adiciona a nova linha à tabela
-        tbodyOS.appendChild(newRow);
-    });
+    // Adiciona a nova linha à tabela
+    tbodyOS.appendChild(newRow);
+  });
 
-    // Remover linha
-    tbodyOS.addEventListener('click', function(event) {
-        if (event.target.classList.contains('btn-remove-row')) {
-            const rowToRemove = event.target.closest('tr');
-            rowToRemove.remove();
-        }
-    });
+  // Remover linha
+  tbodyOS.addEventListener("click", function (event) {
+    if (event.target.classList.contains("btn-remove-row")) {
+      const rowToRemove = event.target.closest("tr");
+      rowToRemove.remove();
+    }
+  });
 
-    // Mostrar/ocultar colunas extras
-    btnToggleColumns.addEventListener('click', function() {
-        const colunaExtra = document.querySelectorAll('.coluna-extra');
-        colunaExtra.forEach(function(col) {
-            col.classList.toggle('extras-hidden');
-        });
+  // Mostrar/ocultar colunas extras
+  btnToggleColumns.addEventListener("click", function () {
+    const colunaExtra = document.querySelectorAll(".coluna-extra");
+    colunaExtra.forEach(function (col) {
+      col.classList.toggle("extras-hidden");
     });
+  });
 });
-
-

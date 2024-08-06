@@ -1,0 +1,254 @@
+/* Container principal */
+.container,
+.cliente-contatoOS {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.container section,
+.cliente-contatoOS div {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+input.form-control {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo h1 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.titulo input {
+  max-width: 200px;
+}
+
+.extras-hidden {
+  display: none;
+}
+
+/* Layout responsivo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cliente-contatoOS {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cabecalho-os {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px;
+}
+
+.btn__adicionar {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+  padding: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--cor-fundo);
+  border-radius: 4px;
+}
+
+.btn-add-row,
+.btn-toggle-columns,
+.btn-submit {
+  background-color: var(--cor-botoes);
+  color: var(--cor-white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.btn-remove-row {
+  border: none;
+  color: var(--cor-texto);
+}
+
+.btn-remove-row:hover {
+  color: red;
+}
+
+.btn-add-row:hover,
+.btn-toggle-columns:hover,
+.btn-submit:hover {
+  background-color: var(--cor-botoes);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd9d9;
+  text-align: left;
+}
+
+/* Remover bordas das células vazias no tfoot */
+.table tfoot td {
+  border: none;
+}
+
+/* Adicionar borda apenas nas células com texto no tfoot */
+.table tfoot td:not(:empty) {
+  border: 1px solid #ccc;
+}
+
+/* Ajustar altura das células do tfoot para coincidir com as outras células */
+.table tfoot td {
+  min-height: 30px; /* Ajuste conforme necessário */
+  padding: 10px; /* Ajuste conforme necessário */
+}
+
+.col-quantidade {
+  width: 10%;
+}
+
+.col-descricao {
+  width: 40%;
+}
+
+.col-preco-unitario {
+  width: 15%;
+}
+
+.col-preco-final {
+  width: 15%;
+}
+
+.coluna-extra {
+  width: 30%;
+}
+
+.table th {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-white);
+}
+
+.table-success {
+  color: var(--cor-texto);
+}
+
+tfoot td {
+  text-align: right;
+}
+
+.observacoes {
+  display: block;
+  margin-top: 30px;
+  text-align: left;
+}
+
+/* Alinhamento e estilo para .input-final */
+.input-final {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.input-final input {
+  width: calc(25% - 10px); /* Ajuste para garantir espaçamento */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 40px;
+}
+
+.entrega {
+  width: 15em;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn__salvar {
+  text-align: center;
+}
+
+/* Estilo para tablets */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cabecalho-os {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-final {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 576px) {
+  .table tr {
+    margin-bottom: 15px;
+  }
+
+  .table td {
+    text-align: right;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
