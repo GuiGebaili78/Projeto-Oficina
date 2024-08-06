@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ordem de Serviço</title>
     <link rel="stylesheet" href="./styles/style.css" />
-  </head>
+  </head> 
   <body>
     <div id="nav-placeholder"></div>
 
     <main class="main">
       <div class="container">
-        <h1 class="text-center">Ordem de Serviço</h1>
+        <div class="titulo">
+          <h1 class="text-center">Ordem de Serviço</h1>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="numOS"
+              name="numOS"
+              required
+              placeholder="Número da OS"
+            />
+          </div>
+        </div>
 
         <section class="cabecalho-os">
           <div>
@@ -23,16 +35,7 @@
               required
             />
           </div>
-          <div>
-            <input
-              type="text"
-              class="form-control"
-              id="numOS"
-              name="numOS"
-              required
-              placeholder="Número da OS"
-            />
-          </div>
+          
           <div>
             <input
               type="text"
@@ -41,6 +44,16 @@
               name="veiculoOS"
               required
               placeholder="Veículo"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="placaOS"
+              name="placaOS"
+              required
+              placeholder="Placa"
             />
           </div>
           <div>
@@ -73,10 +86,10 @@
       <table class="table">
         <thead class="cabecalho-tabela">
           <tr>
-            <th class="text-center">Quantidade</th>
-            <th class="text-center">Descrição do Produto</th>
-            <th class="text-center">Preço Unitário (R$)</th>
-            <th class="text-center">Preço Final (R$)</th>
+            <th class="text-center col-quantidade">Quantidade</th>
+            <th class="text-center col-descricao">Descrição do Produto</th>
+            <th class="text-center col-preco-unitario">Preço Unitário (R$)</th>
+            <th class="text-center col-preco-final">Preço Final (R$)</th>
             <th class="text-center coluna-extra extras-hidden">Auto Peças</th>
             <th class="text-center coluna-extra extras-hidden">Valor</th>
             <th class="text-center coluna-extra extras-hidden">Obs</th>
@@ -178,7 +191,7 @@
           id="observacao"
           name="observacao"
           rows="3"
-          placeholder="Observações"
+          placeholder="Observações:"
         ></textarea>
       </div>
 
@@ -190,7 +203,7 @@
             id="nomeProfissional"
             name="nomeProfissional"
             required
-            placeholder="Profissional"
+            placeholder="Profissional:"
           />        
         
           <input
@@ -199,7 +212,7 @@
             id="formaPagamento"
             name="formaPagamento"
             required
-            placeholder="Forma de Pagamento"
+            placeholder="Forma de Pagamento:"
           />
 
           <input
@@ -208,7 +221,7 @@
             id="nomeOficina"
             name="nomeOficina"
             required
-            placeholder="Oficina"
+            placeholder="Oficina:"
           />
 
           <input

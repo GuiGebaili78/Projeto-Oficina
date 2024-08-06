@@ -20,14 +20,17 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: var(--fonte-principal);
-  line-height: 1.6;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 main {
+  height: 100%;
+  width: 100%;
   padding: 30px 80px;
 }
 
@@ -102,12 +105,13 @@ main {
 
 .text-center {
   text-align: center;
+  padding: 6px;
 }
 
 
 .form-control {
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   border: 1px solid var(--cor-fundo);
   border-radius: 4px;
 }
@@ -138,21 +142,41 @@ main {
   background-color: var(--cor-botoes);
 }
 
-.table {
-  width: 80%;
+table {
+  width: 100%;
   border-collapse: collapse;
-  margin: 20px auto;
 }
 
-.table th, .table td {
-  border: 1px solid var(--cor-fundo);
-  text-align: center;
+th, td {
+  border: 1px solid #ddd9d9;
+  text-align: left;
+}
+
+.col-quantidade {
+  width: 10%;
+}
+
+.col-descricao {
+  width: 40%;
+}
+
+.col-preco-unitario {
+  width: 15%;
+}
+
+.col-preco-final {
+  width: 15%;
+}
+
+.coluna-extra {
+  width: 30%;
 }
 
 .table th {
   background-color: var(--cor-secundaria);
   color: var(--cor-white);
 }
+
 
 .table-success {
   
@@ -167,8 +191,8 @@ tfoot td {
 
 .observacoes {
   display: block;
-  margin: 0 200px;
-  text-align: center;
+  margin-top: 30px;
+  text-align: left;
 }
 
 .input-final {
