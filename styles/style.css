@@ -36,18 +36,29 @@ main {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
   background-color: var(--cor-secundaria);
   color: var(--cor-white);
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; /* Espaça logo e links */
+  padding: 10px 20px; /* Adiciona espaçamento interno */
   position: static;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo img {
+  max-width: 150px; /* Ajuste o tamanho do logo */
+  height: auto;
+}
+
 .nav-list {
   list-style-type: none;
   display: flex;
-  justify-content: space-around;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -75,4 +86,10 @@ main {
   width: 100%;
   bottom: 0;
   left: 0;
+}
+
+.link-footer {
+  color: var(--cor-white);
+  text-decoration: none;
+  margin-right: 20px;
 }
