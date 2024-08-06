@@ -10,20 +10,23 @@
     <div id="nav-placeholder"></div>
 
     <main class="main">
-      <div class="container">
-        <div class="titulo">
-          <h1 class="text-center">Ordem de Serviço</h1>
-          <div>
-            <input
-              type="text"
-              class="form-control"
-              id="numOS"
-              name="numOS"
-              required
-              placeholder="Número da OS"
-            />
-          </div>
+
+      <div class="titulo">
+        <h1 class="text-center">Ordem de Serviço</h1>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="numOS"
+            name="numOS"
+            required
+            placeholder="Número da OS"
+          />
         </div>
+      </div>
+
+
+      <div class="container">       
 
         <section class="cabecalho-os">
           <div>
@@ -33,6 +36,16 @@
               id="dataOS"
               name="dataOS"
               required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="placaOS"
+              name="placaOS"
+              required
+              placeholder="Placa"
             />
           </div>
           
@@ -50,32 +63,48 @@
             <input
               type="text"
               class="form-control"
-              id="placaOS"
-              name="placaOS"
+              id="corOS"
+              name="corOS"
               required
-              placeholder="Placa"
+              placeholder="Cor"
             />
           </div>
+          
+          
           <div>
             <input
               type="text"
               class="form-control"
-              id="nomeCliente"
-              name="nomeCliente"
-              required
-              placeholder="Cliente"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              class="form-control"
-              id="quilometragem"
-              name="quilometragem"
+              id="quilometragemOS"
+              name="quilometragemOS"
               placeholder="KM"
             />
-          </div>
-        </section>
+          </div>         
+        
+        
+      </section>
+      </div>
+      <div class="cliente-contatoOS">
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="nomeClienteOS"
+            name="nomeClienteOS"
+            required
+            placeholder="Cliente"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="contatoOS"
+            name="contatoOS"
+            required
+            placeholder="Contato"
+          />
+        </div>
       </div>
 
       <div class="btn__adicionar">
