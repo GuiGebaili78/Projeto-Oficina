@@ -1,28 +1,38 @@
-/* Container principal */
-.container,
-.cliente-contatoOS {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
+:root {
+  /* Cores */
+  --cor-primaria: #57848b;
+  --cor-secundaria: #57848b;
+  --cor-botoes: #57848b;
+  --cor-texto: #273133;
+  --cor-white: #f4f4f4;
+  --cor-fundo: #ebe9f1;
+  --cor-destaque: #5b7b80;
+
+  /* Fontes */
+  --fonte-principal: "Montserrat", sans-serif;
+  --fonte-secundaria: "Montserrat", sans-serif;
 }
 
-.container section,
-.cliente-contatoOS div {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  justify-content: center;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-input.form-control {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+html,
+body {
+  font-family: var(--fonte-principal);
+  height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 30px 80px;
 }
 
 .titulo {
@@ -42,11 +52,39 @@ input.form-control {
   max-width: 200px;
 }
 
-.extras-hidden {
-  display: none;
+/* Container principal */
+.container,
+.cliente-contatoOS {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
 }
 
-/* Layout responsivo */
+.container section,
+.cliente-contatoOS div {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.dataEntrada {
+  width: 30%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input.form-control {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -72,6 +110,12 @@ input.form-control {
   width: 100%;
   margin: 5px;
 }
+
+.extras-hidden {
+  display: none;
+}
+
+/* Layout responsivo */
 
 .btn__adicionar {
   text-align: center;
